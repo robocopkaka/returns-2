@@ -1,0 +1,15 @@
+= simple_form_for(@payment) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :merchantId
+    = f.input :serviceTypeId
+    = f.input :orderId
+    = f.input :payerName
+    = f.input :payerEmail
+    = f.input :payerPhone
+    = f.input :amount
+    = f.input :reference
+
+  .form-actions
+    = f.button :submit

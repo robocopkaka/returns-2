@@ -10,5 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require sha512.min.js
 //= require rails-ujs
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

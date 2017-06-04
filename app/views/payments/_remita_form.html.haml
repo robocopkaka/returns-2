@@ -1,0 +1,11 @@
+= form_tag("http://www.remitademo.net/remita/ecomm/init.reg", :method => "POST", :name => "SubmitRemitaForm") do
+  = hidden_field_tag "merchantId", @payment.merchantId
+  = hidden_field_tag "serviceTypeId", @payment.serviceTypeId
+  = hidden_field_tag "orderId", (@payment.id + 1000000)
+  = hidden_field_tag "hash", gen_remita_hash(@payment.amount, (@payment.id + 1000000), payments_return_url)
+  = hidden_field_tag "payerName", @payment.payerName
+  = hidden_field_tag "payerEmail", @payment.payerEmail
+  = hidden_field_tag "payerPhone", @payment.payerPhone
+  = hidden_field_tag "amt", @payment.amount
+  = hidden_field_tag "responseurl", payments_return_url
+  = submit_tag "Pay Using Remita", "data-no-turbolink" => true

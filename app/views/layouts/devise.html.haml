@@ -1,0 +1,38 @@
+!!! 5
+%html{ :lang => "en" }
+  %head
+    %meta{ :charset => "utf-8" }
+
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+
+    %title= content_for?(:title) ? "CAC Return - #{yield(:title)}" : "CAC Returns"
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tag
+
+
+
+
+  %body.application
+    #header{style: "background-color: #27ae60;"}
+      .row
+        = render '/layouts/header'
+
+      
+    #container.row
+      .row
+        .small-12.columns
+          = render '/layouts/error_header'
+        
+
+      = yield :header_login
+      .large-4.medium-6.small-12.columns.end
+        = yield
+
+    #footer.row   
+      .large-12.medium-12.small-12.columns 
+        /= render '/layouts/footer_nav'
+
+
+    = javascript_include_tag "application", "data-turbolinks-track" => true

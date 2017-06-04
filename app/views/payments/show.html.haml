@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Merchantid:
+  = @payment.merchantId
+%p
+  %b Servicetypeid:
+  = @payment.serviceTypeId
+%p
+  %b Orderid:
+  = @payment.orderId
+%p
+  %b Payername:
+  = @payment.payerName
+%p
+  %b Payeremail:
+  = @payment.payerEmail
+%p
+  %b Payerphone:
+  = @payment.payerPhone
+%p
+  %b Amount:
+  = @payment.amount
+%p
+  %b Reference:
+  = @payment.reference
+
+= link_to 'Edit', edit_payment_path(@payment)
+\|
+= link_to 'Back', payments_path

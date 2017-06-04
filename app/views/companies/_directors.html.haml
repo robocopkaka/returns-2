@@ -1,0 +1,23 @@
+- unless @directors.nil?
+  %ul#directors.table
+    .table-row.table-header-group
+      %li.small-1.columns
+      %li.small-3.columns Name
+      %li.small-1.columns Role
+      %li.small-2.columns Nationality
+      %li.small-1.columns Age
+      %li.small-2.columns.end
+
+
+    - @directors.each do |director|
+      .table-row{:class => "#{cycle('odd','even')}" }
+        %li.small-1.columns
+          %i.icon-file-powerpoint
+        %li.small-3.columns= link_to director.name, "#"
+        %li.small-1.columns= director.role
+        %li.small-2.columns= director.nationality
+        %li.small-1.columns.end= director.dob
+        %li.small-2.columns.end 
+          = link_to "Edit", "#"
+          |
+          = link_to "Delete", "#"

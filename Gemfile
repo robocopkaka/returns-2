@@ -50,6 +50,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 gem 'grape-active_model_serializers'
+#foundation gem
+gem 'foundation-rails'
 
 
 group :development, :test do

@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-	before_action :set_company!, except: [:retrieve]
+	# before_action :set_company!, except: [:retrieve]
   before_action :set_company, only: [:show, :edit, :update]
 
   # GET /companies
@@ -80,7 +80,7 @@ class CompaniesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       # @company = Company.find(params[:id])
-      @company = current_company
+      @company = current_company # calls the  current_company method in ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

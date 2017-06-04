@@ -1,0 +1,18 @@
+
+
+= form_tag retrieve_companies_path, method: :get do
+  .row
+    / errors
+
+  .row
+    .large-6.medium-9.columns.end
+      = label_tag :company_name, "Registered Company Number"
+      = text_field_tag :rc_number
+  .row
+    .large-6.medium-9.columns.end
+      = label_tag :company_name, "Authorization Code"
+      = text_field_tag :authorization_code      
+
+  .row
+    .small-6.large-3.medium-3.columns 
+      = submit_tag "Retrieve", class: "right button btn"
